@@ -8,10 +8,17 @@
   src: url("../../fonts/Helvetica-Neue-Condensed-Bold_22500.ttf");
 }
 
-.title {
+.title,
+.location,
+.menu,
+a {
   font-family: "Helvetica Neue";
 }
 
-.location {
-  font-family: "Helvetica Neue";
+a {
+  font-size: 5rem;
+}
+
+.menu {
+  font-size: 1.5rem;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import modelData from "../data/modelData";
 
 const models = Object.keys(modelData);
@@ -17,14 +18,14 @@ for (var i = 0; i < models.length; i += 2) {
       {pair.map((element) => (
         <div className="image-container">
           <div className="thumbnail">
-            <div className="frame">
+            <Link to={`/model/yasmeen-tariq`} className="frame">
               <img
                 src={
                   process.env.PUBLIC_URL + `/images/models/model-1-small.jpg`
                 }
                 alt="model1.jpg"
               />
-            </div>
+            </Link>
           </div>
           <div className="information">
             <div className="title">{element.name + " " + element.surname}</div>

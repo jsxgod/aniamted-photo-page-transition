@@ -18,7 +18,12 @@ main {
           position: relative;
           .frame {
             img {
-              width: 100%;
+              width: 524px;
+              height: 650px;
+              transition: transform 0.3s ease-in-out;
+              &:hover {
+                transform: scale(1.1);
+              }
             }
           }
         }

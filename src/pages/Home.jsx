@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import modelData from "../data/modelData";
 
@@ -41,6 +41,9 @@ for (var i = 0; i < models.length; i += 2) {
 }
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main>
       <div className="container">{rows}</div>

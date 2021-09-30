@@ -8,6 +8,10 @@
   src: url("../../fonts/Helvetica-Neue-Condensed-Bold_22500.ttf");
 }
 
+html {
+  font-size: 16px;
+}
+
 .title,
 .location,
 .menu,
@@ -19,7 +23,12 @@ a {
 a {
   font-size: 5rem;
 }
-
+.img-link {
+  font-size: 0px;
+}
 .menu {
   font-size: 1.5rem;
+}
+.information {
+  font-size: 1rem;
 }

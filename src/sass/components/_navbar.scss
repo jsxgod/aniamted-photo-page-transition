@@ -1,8 +1,14 @@
 .navbar {
   padding: 0 32px;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
+  position: -webkit-sticky;
+  z-index: 200;
+  position: sticky;
+  top: 0;
+  background-color: $main;
+  border-bottom: 1px solid $black;
   .navbar-container {
-    height: 128px;
+    height: $navbar-height;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,6 +18,11 @@
         text-decoration: none;
         color: $black;
         white-space: nowrap;
+
+        &:hover {
+          background-color: $black;
+          color: $main;
+        }
       }
     }
     .menu {
@@ -21,13 +32,12 @@
       align-items: center;
       justify-content: center;
       border-radius: 100%;
-      transition: 0.2s ease-in-out;
       border: 1px solid $black;
 
       &:hover {
         cursor: cell;
-        border-radius: 0%;
-        font-size: 200%;
+        background-color: $black;
+        color: $main;
       }
     }
   }

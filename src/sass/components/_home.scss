@@ -12,14 +12,20 @@ main {
       justify-content: space-evenly;
       height: 100vh;
       .image-container {
-        position: relative;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 10px;
         .thumbnail {
           overflow: hidden;
-          position: relative;
-          .frame {
+          display: flex;
+          margin-bottom: 10px;
+          .img-link {
             img {
-              width: 100%;
               transition: transform 0.3s ease-in-out;
+              width: 100%;
               &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
@@ -32,7 +38,6 @@ main {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-top: 20px;
           text-transform: uppercase;
           .title {
           }

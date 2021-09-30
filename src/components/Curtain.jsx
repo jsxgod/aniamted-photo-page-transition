@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 
 const curtainVariants = {
   hide: {
-    width: 0,
+    height: 0,
   },
   show: {
-    width: "100vw",
+    height: 0,
   },
   exit: {
-    width: 0,
+    height: "100vh",
+    opacity: 1,
   },
 };
 
@@ -21,7 +22,7 @@ const Curtain = ({ clicked }) => {
       initial="hide"
       animate={clicked ? "show" : "hide"}
       exit="exit"
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     ></motion.div>
   );
 };

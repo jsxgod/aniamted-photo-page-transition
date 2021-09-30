@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Curtain } from "../components";
 import modelData from "../data/modelData";
 
 const models = Object.keys(modelData);
 
 const Home = () => {
+  const [modelClicked, setModelClicked] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <main>
+    <motion.main exit={{ opacity: 0 }} transition={{ duration: 0.8 }}>
       <div className="container">
         <div className="gallery">
           {models.map((model) => (
@@ -17,6 +21,7 @@ const Home = () => {
               <div className="thumbnail">
                 <Link
                   to={`/model/${modelData[model].name}-${modelData[model].surname}`}
+                  onClick={() => setModelClicked(true)}
                   className="img-link"
                 >
                   <img
@@ -38,7 +43,8 @@ const Home = () => {
           ))}
         </div>
       </div>
-    </main>
+      <Curtain clicked={modelClicked} />
+    </motion.main>
   );
 };
 

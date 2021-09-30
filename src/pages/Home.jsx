@@ -4,7 +4,6 @@ import modelData from "../data/modelData";
 
 const models = Object.keys(modelData);
 const rows = [];
-console.log(modelData);
 for (var i = 0; i < models.length; i += 2) {
   const pair = [
     modelData[models[i]],
@@ -18,7 +17,7 @@ for (var i = 0; i < models.length; i += 2) {
       {pair.map((element) => (
         <div className="image-container">
           <div className="thumbnail">
-            <Link to={`/model/yasmeen-tariq`} className="frame">
+            <Link to={`/model/yasmeen-tariq`} className="img-link">
               <img
                 src={
                   process.env.PUBLIC_URL + `/images/models/model-1-small.jpg`

@@ -13,7 +13,15 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <motion.main exit={{ opacity: 0 }} transition={{ duration: 0.8 }}>
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 1 }}
+      transition={{
+        duration: 0.6,
+        ease: [0, 0.55, 0.45, 1],
+      }}
+    >
       <div className="container">
         <div className="gallery">
           {models.map((model) => (

@@ -1,7 +1,11 @@
 .curtain {
   position: fixed;
-  top: $navbar-height;
-  width: 100vw;
+  top: 0;
   height: 0;
+  width: 100vw;
   background-color: $main;
+
+  &.black {
+    background-color: $black;
+  }
 }

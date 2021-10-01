@@ -26,10 +26,13 @@ main {
           .img-link {
             img {
               transition: transform 0.5s cubic-bezier(0.43, 0.13, 0.23, 0.96);
-              width: 100%;
+
+              width: 524px;
+              height: 650px;
               &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
+                opacity: 1;
               }
             }
           }

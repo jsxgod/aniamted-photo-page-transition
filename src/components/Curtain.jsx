@@ -10,20 +10,24 @@ const curtainVariants = {
   },
   exit: {
     height: "100vh",
-    opacity: 1,
   },
 };
 
 const Curtain = ({ clicked }) => {
   return (
-    <motion.div
-      className="curtain"
-      variants={curtainVariants}
-      initial="hide"
-      animate={clicked ? "show" : "hide"}
-      exit="exit"
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-    ></motion.div>
+    <div classname="curtain-container">
+      <motion.div
+        className="curtain"
+        variants={curtainVariants}
+        initial="hide"
+        animate={clicked ? "show" : "hide"}
+        exit="exit"
+        transition={{
+          duration: 0.6,
+          ease: [0, 0.55, 0.45, 1],
+        }}
+      ></motion.div>
+    </div>
   );
 };
 

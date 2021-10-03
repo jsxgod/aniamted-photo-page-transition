@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
+import { ModelTitle } from "../components/model";
 
 const loadVariants = {
   initial: {
@@ -17,35 +18,6 @@ const loadVariants = {
     opacity: 0,
     transition: {
       duration: 0.4,
-      ease: [0.43, 0.13, 0.23, 0.96],
-    },
-  },
-};
-
-const info_variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      delay: 1.4,
-      duration: 0.6,
-      ease: [0.43, 0.13, 0.23, 0.96],
-    },
-  },
-  exit: {},
-};
-
-const name_variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      delay: 1.4,
-      duration: 0.6,
       ease: [0.43, 0.13, 0.23, 0.96],
     },
   },
@@ -95,41 +67,9 @@ const Model = () => {
       animate="animate"
       exit="exit"
     >
-      <div className="title-container">
-        <motion.div
-          className="model-title"
-          variants={info_variants}
-          initial="initial"
-          animate="animate"
-        >
-          <div className="instagram">@instagram_placeholder</div>
-        </motion.div>
-        <motion.div
-          className="name-container"
-          variants={name_variants}
-          initial="initial"
-          animate="animate"
-        >
-          <span className="first">
-            <span>Y</span>
-            <span>a</span>
-            <span>s</span>
-            <span>m</span>
-            <span>e</span>
-            <span>e</span>
-            <span>n</span>
-          </span>
-          <span className="last">
-            <span>T</span>
-            <span>a</span>
-            <span>r</span>
-            <span>i</span>
-            <span>q</span>
-          </span>
-        </motion.div>
-      </div>
+      <ModelTitle />
       <motion.div
-        className="big-image-container"
+        className="big-image-wrapper"
         variants={image_container_variants}
         initial="initial"
         animate="animate"

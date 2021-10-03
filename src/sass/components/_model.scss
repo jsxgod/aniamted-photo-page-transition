@@ -97,7 +97,7 @@
         }
         .info-row {
           display: grid;
-          grid-template-columns: 1fr 3fr 1fr;
+          grid-template-columns: 1fr 4fr;
           justify-content: space-between;
           align-items: center;
           margin: 0.5rem 0;
@@ -112,7 +112,6 @@
             grid-column: 3;
             display: flex;
             justify-content: right;
-            align-items: center;
           }
         }
       }

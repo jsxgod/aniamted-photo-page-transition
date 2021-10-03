@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
-import { ModelImage, ModelTitle } from "../components/model";
+import { ModelImage, ModelTitle, ModelInfo } from "../components/model";
 
 const loadVariants = {
   initial: {
@@ -38,6 +38,7 @@ const Model = () => {
     >
       <ModelTitle />
       <ModelImage />
+      <ModelInfo />
     </motion.div>
   );
 };

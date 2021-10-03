@@ -15,14 +15,13 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(0, 1fr);
     align-items: top;
     justify-content: space-evenly;
-    .model-title {
+    .title-info-container {
       padding: 0 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       grid-column: 2;
       grid-row: 2;
-
       .location {
         :nth-child(2) {
           margin-left: 28px;
@@ -37,7 +36,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      .first {
+      .first-name {
         margin-right: 72px;
       }
       span {
@@ -49,7 +48,7 @@
       }
     }
   }
-  .big-image-container {
+  .big-image-wrapper {
     position: relative;
     display: flex;
     justify-content: center;

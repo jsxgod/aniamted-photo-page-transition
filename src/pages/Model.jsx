@@ -95,17 +95,13 @@ const Model = () => {
       animate="animate"
       exit="exit"
     >
-      <div className="info-container">
+      <div className="title-container">
         <motion.div
-          className="model-info"
+          className="model-title"
           variants={info_variants}
           initial="initial"
           animate="animate"
         >
-          <div className="location">
-            <span>28.538336</span>
-            <span>-81.379234</span>
-          </div>
           <div className="instagram">@instagram_placeholder</div>
         </motion.div>
         <motion.div

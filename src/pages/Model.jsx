@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
-import { ModelTitle } from "../components/model";
+import { ModelImage, ModelTitle } from "../components/model";
 
 const loadVariants = {
   initial: {
@@ -23,37 +23,6 @@ const loadVariants = {
   },
 };
 
-const image_container_variants = {
-  initial: {
-    width: 524,
-    height: 650,
-    y: "-50%",
-  },
-  animate: {
-    y: 0,
-    width: "100%",
-    height: window.innerWidth > 1440 ? 600 : 400,
-    overflow: "hidden",
-    transition: {
-      duration: 1.2,
-      delay: 0.9,
-      ease: [0.6, 0.01, -0.05, 0.9],
-    },
-  },
-};
-
-const image_variants = {
-  initial: {},
-  animate: {
-    y: window.innerWidth > 1440 ? "-35%" : -150,
-    transition: {
-      duration: 1,
-      delay: 1.1,
-      ease: [0.6, 0.01, -0.05, 0.9],
-    },
-  },
-};
-
 const Model = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,22 +37,7 @@ const Model = () => {
       exit="exit"
     >
       <ModelTitle />
-      <motion.div
-        className="big-image-wrapper"
-        variants={image_container_variants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
-        <motion.img
-          src={process.env.PUBLIC_URL + `/images/models/model-1.webp`}
-          alt="model1.jpg"
-          variants={image_variants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        />
-      </motion.div>
+      <ModelImage />
     </motion.div>
   );
 };

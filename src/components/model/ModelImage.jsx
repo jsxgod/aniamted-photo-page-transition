@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const image_container_variants = {
+const wrapper_variants = {
   initial: {
     width: 524,
     height: 650,
@@ -36,7 +36,7 @@ const ModelImage = () => {
   return (
     <motion.div
       className="big-image-wrapper"
-      variants={image_container_variants}
+      variants={wrapper_variants}
       initial="initial"
       animate="animate"
       exit="exit"

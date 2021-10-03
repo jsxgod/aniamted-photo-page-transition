@@ -8,6 +8,8 @@
   src: url("../../fonts/Helvetica-Neue-Condensed-Bold_22500.ttf");
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
 html {
   font-size: 16px;
 }
@@ -16,8 +18,17 @@ html {
 .location,
 .menu,
 .instagram,
+.model-info-wrapper,
 a {
   font-family: "Helvetica Neue";
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -31,4 +42,9 @@ a {
 }
 .information {
   font-size: 1rem;
+}
+
+.info-label,
+.info-value {
+  font-size: 1.5rem;
 }

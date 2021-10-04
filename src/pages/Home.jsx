@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import { Curtain } from "../components";
 import modelData from "../data/modelData";
 
-const models = Object.keys(modelData);
-
 const Home = () => {
   const [modelClicked, setModelClicked] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -24,27 +23,25 @@ const Home = () => {
     >
       <div className="container">
         <div className="gallery">
-          {models.map((model) => (
+          {modelData.map((model) => (
             <div className="image-container">
               <div className="thumbnail">
                 <Link
-                  to={`/model/${modelData[model].name}-${modelData[model].surname}`}
+                  to={`/models/${model.id}`}
                   onClick={() => setModelClicked(true)}
                   className="img-link"
                 >
                   <img
-                    src={process.env.PUBLIC_URL + modelData[model].image}
+                    src={process.env.PUBLIC_URL + model.image}
                     alt="model1.jpg"
                   />
                 </Link>
               </div>
               <div className="information">
-                <div className="title">
-                  {modelData[model].name + " " + modelData[model].surname}
-                </div>
+                <div className="title">{model.name + " " + model.surname}</div>
                 <div className="location">
-                  <span>{modelData[model].longitude}</span>
-                  <span>{modelData[model].latitude}</span>
+                  <span>{model.longitude}</span>
+                  <span>{model.latitude}</span>
                 </div>
               </div>
             </div>

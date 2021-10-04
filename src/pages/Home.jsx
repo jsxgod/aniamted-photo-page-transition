@@ -27,7 +27,7 @@ const Home = () => {
             <div className="image-container">
               <div className="thumbnail">
                 <Link
-                  to={`/models/${model.id}`}
+                  to={`/model/${model.id}`}
                   onClick={() => setModelClicked(true)}
                   className="img-link"
                 >

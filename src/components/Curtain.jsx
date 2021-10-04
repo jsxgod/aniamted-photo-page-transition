@@ -15,7 +15,7 @@ const curtainVariants = {
 
 const Curtain = ({ clicked }) => {
   return (
-    <div classname="curtain-container">
+    <div className="curtain-container">
       <motion.div
         className="curtain"
         variants={curtainVariants}

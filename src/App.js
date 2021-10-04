@@ -8,7 +8,6 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   return (
     <Router>
-      <NavBar />
       <Route
       render={({location}) => (
         <AnimatePresence exitBeforeEnter>
@@ -21,12 +20,20 @@ function App() {
           <Route
           exact
           path="/gallery"
-          render={() => <Gallery />}
+          render={() => 
+            <>
+              <NavBar />
+              <Gallery />
+            </>}
           />
           <Route
           exact
           path="/model/:id"
-          render={() => <Model />}
+          render={() => 
+          <>
+            <NavBar />
+            <Model />
+          </>}
           />
         </Switch>
         </AnimatePresence>

@@ -1,7 +1,7 @@
 .home-page {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, $black 50%, $main 50%);
+  background: $black;
   color: $main;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -37,13 +37,12 @@
       font-family: "Maragsa";
     }
     .welcome-message {
-      display: block;
       border-radius: 16px;
-      transition: 0.5s ease-in-out;
       padding: 8px;
-      transition: 0.5s ease-in-out;
+      transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
       &:hover {
-        background-color: $black;
+        background: $black;
+        opacity: 10%;
       }
       p {
         @media (max-width: 768px) {

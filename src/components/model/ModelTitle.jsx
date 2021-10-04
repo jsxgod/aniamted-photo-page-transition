@@ -16,7 +16,7 @@ const variants = {
   exit: {},
 };
 
-const ModelTitle = () => {
+const ModelTitle = ({ model }) => {
   return (
     <div className="title-container">
       <motion.div
@@ -25,7 +25,7 @@ const ModelTitle = () => {
         initial="initial"
         animate="animate"
       >
-        <div className="instagram">@instagram_placeholder</div>
+        <div className="instagram">{model.instagram}</div>
       </motion.div>
       <motion.div
         className="name-container"
@@ -34,19 +34,14 @@ const ModelTitle = () => {
         animate="animate"
       >
         <span className="first-name">
-          <span>N</span>
-          <span>a</span>
-          <span>m</span>
-          <span>e</span>
+          {[...model.name].map((char) => (
+            <span>{char}</span>
+          ))}
         </span>
         <span className="last-name">
-          <span>S</span>
-          <span>u</span>
-          <span>r</span>
-          <span>n</span>
-          <span>a</span>
-          <span>m</span>
-          <span>e</span>
+          {[...model.surname].map((char) => (
+            <span>{char}</span>
+          ))}
         </span>
       </motion.div>
     </div>

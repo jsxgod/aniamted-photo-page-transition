@@ -32,7 +32,7 @@ const image_variants = {
   },
 };
 
-const ModelImage = () => {
+const ModelImage = ({ model }) => {
   return (
     <motion.div
       className="big-image-wrapper"
@@ -42,8 +42,8 @@ const ModelImage = () => {
       exit="exit"
     >
       <motion.img
-        src={process.env.PUBLIC_URL + `/images/models/model-1.webp`}
-        alt="model1.jpg"
+        src={process.env.PUBLIC_URL + model.image_large}
+        alt={process.env.PUBLIC_URL + model.image}
         variants={image_variants}
         initial="initial"
         animate="animate"

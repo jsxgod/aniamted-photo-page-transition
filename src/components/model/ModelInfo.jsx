@@ -1,6 +1,6 @@
 import React from "react";
 
-const ModelInfo = () => {
+const ModelInfo = ({ model }) => {
   return (
     <div className="model-info-wrapper">
       <div className="model-info-container">
@@ -28,27 +28,27 @@ const ModelInfo = () => {
         <div className="model-details">
           <div className="info-row">
             <div className="info-label">Name</div>
-            <div className="info-value">Yasmeen</div>
+            <div className="info-value">{model.name}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Surname</div>
-            <div className="info-value">Tariq</div>
+            <div className="info-value">{model.surname}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Age</div>
-            <div className="info-value">23</div>
+            <div className="info-value">{model.age}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Height</div>
-            <div className="info-value">185</div>
+            <div className="info-value">{model.height}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Eye Color</div>
-            <div className="info-value">brown</div>
+            <div className="info-value">{model.eye_color}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Hair Color</div>
-            <div className="info-value">dark brown</div>
+            <div className="info-value">{model.hair_color}</div>
           </div>
         </div>
       </div>

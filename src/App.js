@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/main.scss";
-import { Home, Model } from "./pages"
+import { Home,  Gallery, Model } from "./pages"
 import { NavBar } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -17,6 +17,11 @@ function App() {
           exact
           path="/"
           render={() => <Home />}
+          />
+          <Route
+          exact
+          path="/gallery"
+          render={() => <Gallery />}
           />
           <Route
           exact

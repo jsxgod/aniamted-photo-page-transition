@@ -38,7 +38,7 @@ const wordVariants2 = {
 
 const letterVariants = {
   initial: {
-    y: "100%",
+    y: "200%",
   },
   animate: {
     y: 0,

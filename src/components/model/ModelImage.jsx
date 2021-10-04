@@ -10,7 +10,7 @@ const wrapper_variants = {
   animate: {
     y: 0,
     width: "100%",
-    height: window.innerWidth > 1440 ? "100vh" : 400,
+    height: window.innerWidth > 1440 ? "104vh" : 400,
     overflow: "hidden",
     transition: {
       duration: 1.2,

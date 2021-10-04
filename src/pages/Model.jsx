@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { ModelImage, ModelTitle, ModelInfo } from "../components/model";
+import modelData from "../data/modelData";
 
 const loadVariants = {
   initial: {
@@ -24,6 +26,8 @@ const loadVariants = {
 };
 
 const Model = () => {
+  const model = modelData[useParams().id - 1];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -36,9 +40,9 @@ const Model = () => {
       animate="animate"
       exit="exit"
     >
-      <ModelTitle />
-      <ModelImage />
-      <ModelInfo />
+      <ModelTitle model={model} />
+      <ModelImage model={model} />
+      <ModelInfo model={model} />
     </motion.div>
   );
 };

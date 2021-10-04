@@ -23,8 +23,8 @@ const Home = () => {
     >
       <div className="container">
         <div className="gallery">
-          {modelData.map((model) => (
-            <div className="image-container">
+          {modelData.map((model, i) => (
+            <div key={i} className="image-container">
               <div className="thumbnail">
                 <Link
                   to={`/model/${model.id}`}

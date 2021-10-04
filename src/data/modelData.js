@@ -1,44 +1,102 @@
-const modelData = {
-  "template1": {
-    name: "Name",
-    surname: "Surname",
+const modelData = [
+  {
+    id: 1,
+    name: "Yasmeen",
+    surname: "Tariq",
+    age: 22,
+    height: 185,
+    eye_color: "brown",
+    hair_color: "dark brown",
     longitude: "28.538336",
     latitude: "-81.379234",
     image: `/images/models/model-1-small.jpg`,
+    image_large: `/images/models/model-1-large.webp`,
     instagram: `@instagram_placeholder`
   },
-  "template2": {
+  {
+    id: 2,
     name: "Name_2",
     surname: "Surname_2",
+    age: 21,
+    height: 178,
+    eye_color: "brown",
+    hair_color: "black",
     longitude: "28.538336",
     latitude: "-81.379234",
-    image: `/images/models/model-1-small.jpg`,
+    image: `/images/models/model-2-small.jpg`,
+    image_large: `/images/models/model-2-large.jpg`,
     instagram: `@instagram_placeholder`
   },
-  "template3": {
+  {
+    id: 3,
     name: "Name_3",
     surname: "Surname_3",
+    age: 20,
+    height: 180,
+    eye_color: "brown",
+    hair_color: "brown",
     longitude: "28.538336",
     latitude: "-81.379234",
-    image: `/images/models/model-1-small.jpg`,
+    image: `/images/models/model-3-large.jpg`,
+    image_large: `/images/models/model-3-large.jpg`,
     instagram: `@instagram_placeholder`
   },
-  "template4": {
+  {
+    id: 4,
     name: "Name_4",
     surname: "Surname_4",
+    age: 24,
+    height: 184,
+    eye_color: "blue",
+    hair_color: "blonde",
     longitude: "28.538336",
     latitude: "-81.379234",
-    image: `/images/models/model-1-small.jpg`,
+    image: `/images/models/model-4-large.jpg`,
+    image_large: `/images/models/model-4-large.jpg`,
     instagram: `@instagram_placeholder`
   },
-  "template5": {
+  {
+    id: 5,
     name: "Name_5",
     surname: "Surname_5",
+    age: 24,
+    height: 189,
+    eye_color: "dark brown",
+    hair_color: "black",
     longitude: "28.538336",
     latitude: "-81.379234",
-    image: `/images/models/model-1-small.jpg`,
+    image: `/images/models/model-5-small.jpg`,
+    image_large: `/images/models/model-5-large.jpg`,
     instagram: `@instagram_placeholder`
   },
-}
+  {
+    id: 6,
+    name: "Name_6",
+    surname: "Surname_6",
+    age: 22,
+    height: 184,
+    eye_color: "blue",
+    hair_color: "brown",
+    longitude: "28.538336",
+    latitude: "-81.379234",
+    image: `/images/models/model-6-small.jpg`,
+    image_large: `/images/models/model-6-large.jpg`,
+    instagram: `@instagram_placeholder`
+  },
+  {
+    id: 7,
+    name: "Name_7",
+    surname: "Surname_7",
+    age: 19,
+    height: 180,
+    eye_color: "blue",
+    hair_color: "light brown",
+    longitude: "28.538336",
+    latitude: "-81.379234",
+    image: `/images/models/model-7-small.jpg`,
+    image_large: `/images/models/model-7-large.jpg`,
+    instagram: `@instagram_placeholder`
+  },
+]
 
 export default modelData;

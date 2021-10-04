@@ -9,7 +9,7 @@
     padding: 0 32px;
     position: relative;
     width: auto;
-    height: calc(60vh - $navbar-height);
+    height: calc(50vh - #{$navbar-height});
     display: grid;
     grid-template-rows: 0.5fr 28px 1.5fr;
     grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(0, 1fr);

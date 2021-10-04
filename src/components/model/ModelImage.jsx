@@ -5,12 +5,12 @@ const wrapper_variants = {
   initial: {
     width: 524,
     height: 650,
-    y: "-50%",
+    y: "-25%",
   },
   animate: {
     y: 0,
     width: "100%",
-    height: window.innerWidth > 1440 ? 600 : 400,
+    height: window.innerWidth > 1440 ? "100vh" : 400,
     overflow: "hidden",
     transition: {
       duration: 1.2,
@@ -23,7 +23,7 @@ const wrapper_variants = {
 const image_variants = {
   initial: {},
   animate: {
-    y: window.innerWidth > 1440 ? "-35%" : -150,
+    y: window.innerWidth > 1440 ? "-30%" : -150,
     transition: {
       duration: 1,
       delay: 1.1,

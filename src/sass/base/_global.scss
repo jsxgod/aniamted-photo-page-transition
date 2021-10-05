@@ -2,3 +2,16 @@ body {
   background-color: $black;
   color: $main;
 }
+
+button {
+  border: none;
+  text-decoration: none;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    border-radius: 10px;
+    background-color: rgba($black, 0.5);
+  }
+}

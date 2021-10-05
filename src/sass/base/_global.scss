@@ -1,6 +1,14 @@
+html {
+  scrollbar-width: none;
+}
 body {
   background-color: $black;
   color: $main;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 button {

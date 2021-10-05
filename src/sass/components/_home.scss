@@ -1,48 +1,100 @@
+.hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 200vh;
+  z-index: 2;
+  display: flex;
+  justify-content: top;
+  .hamburger-menu {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    span {
+      z-index: 2;
+      position: relative;
+      background-color: $gold;
+      width: 80%;
+      border-radius: 100vw;
+      height: 5px;
+      transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+    }
+  }
+}
 .home-page {
   position: relative;
   overflow: hidden;
   background: $black;
   color: $main;
   display: grid;
+  justify-content: center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100vh 100vh;
-
+  grid-template-rows: 100vh 12rem 12rem 15vh 60vh 2rem;
+  grid-template-areas:
+    "welcome-left welcome-right"
+    "sub-title-left ."
+    ". sub-title-right"
+    "gap gap"
+    "section-left section-right"
+    "footer footer";
   @media (max-width: 768px) {
-    overflow-y: visible;
-    grid-template-columns: 100vw;
-    grid-template-rows: 100vh;
-    background: $black;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 100vh auto auto 150px auto auto 2rem;
+    grid-template-areas:
+      "welcome-left welcome-right"
+      "sub-title-left sub-title-left"
+      "sub-title-right sub-title-right"
+      "gap gap"
+      "section-left section-left"
+      "section-right section-right"
+      "footer footer";
   }
   .hint {
     position: absolute;
     top: 0;
-    padding: 10px;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 5vh;
+    padding: 0.5rem;
   }
   .welcome-wrapper {
     width: 100%;
     position: relative;
     padding: 2rem;
-    grid-column: 1;
+    grid-area: welcome-left;
+    grid-column: welcome-left / welcome-right;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 1;
     h1 {
+      text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
+      font-weight: 400;
+      font-size: 20rem;
+      font-family: "Maragsa";
       @media (max-width: 768px) {
         font-size: 5rem;
       }
-      font-weight: 400;
-      font-size: 12rem;
-      font-family: "Maragsa";
     }
     .welcome-message {
+      width: 50%;
+      border: 2px solid $gold;
       border-radius: 16px;
+      background: rgba($black, 0.6);
       padding: 8px;
       transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
       &:hover {
-        background: $black;
-        opacity: 10%;
+        background-color: rgba($black, 0.85);
       }
       p {
         @media (max-width: 768px) {
@@ -52,8 +104,11 @@
           }
         }
         text-align: justify;
-        line-height: 28px;
+        line-height: 1.5;
         font-weight: 400;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
       }
     }
   }
@@ -61,16 +116,131 @@
     display: flex;
     justify-content: center;
     align-items: bottom;
-    grid-column: 2;
+    grid-area: welcome-right;
     img {
       position: absolute;
       width: 100%;
       left: 0;
       z-index: 0;
-
       @media (max-width: 768px) {
-        width: 225%;
+        width: 250%;
       }
     }
+    @media (max-width: 768px) {
+      grid-column: 2 / 3;
+    }
+  }
+  .section-title {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &.left {
+      justify-content: right;
+      grid-area: sub-title-left;
+      @media (max-width: 768px) {
+        padding-left: 13%;
+        justify-content: left;
+      }
+    }
+    &.right {
+      justify-content: left;
+      grid-area: sub-title-right;
+      @media (max-width: 768px) {
+        padding-right: 13%;
+        justify-content: right;
+      }
+    }
+    h1 {
+      color: $main;
+      font-weight: 400;
+      font-size: 10rem;
+      text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
+      font-family: "Maragsa";
+      @media (max-width: 768px) {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .sub-section {
+    display: grid;
+    grid-template-areas: "title" "content";
+    grid-template-rows: 1fr 3fr;
+    background: rgba($black, 0.6);
+    width: 100%;
+    align-items: center;
+    z-index: 1;
+    border-top: 2px solid $gold;
+    border-bottom: 1px solid $gold;
+    &.left {
+      border-radius: 0 100px 0 0;
+      grid-area: section-left;
+      @media (max-width: 768px) {
+        border-bottom: none;
+      }
+    }
+    &.right {
+      border-radius: 100px 0 0 0;
+      border-left: 1px solid $gold;
+      grid-area: section-right;
+    }
+    .sub-title {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        color: $main;
+        font-weight: 200;
+        font-size: 4rem;
+        font-family: "Maragsa";
+        letter-spacing: 0.5rem;
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .sub-section-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: top;
+      align-items: center;
+      width: 100%;
+      .sub-message {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 1rem;
+        border: 1px solid $gold;
+        border-radius: 1rem;
+        width: 75%;
+        text-align: justify;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+        &:hover {
+          background-color: rgba($black, 0.85);
+        }
+        h3 {
+          font-weight: 200;
+          font-size: 3rem;
+        }
+        p {
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      grid-template-rows: 1fr 6fr;
+    }
+  }
+  .contact {
+    z-index: 1;
+    background-color: $black;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    grid-area: footer;
   }
 }

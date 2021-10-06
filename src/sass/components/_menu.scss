@@ -1,0 +1,101 @@
+.menu {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  display: grid;
+  grid-template-areas:
+    "option1 option2"
+    "option3 option4"
+    "option5 option5";
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 42.5vh 42.5vh 15vh;
+
+  .option {
+    font-size: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+    @media (max-width: 768px) {
+      text-shadow: none;
+      font-size: 2rem;
+    }
+    &.dark {
+      background-color: $black;
+      text-shadow: -4px 0 $darkgold, 0 1px $darkgold, 1px 0 $darkgold,
+        0 -1px $darkgold;
+      &:hover {
+        background-color: darken($black, 3%);
+        cursor: pointer;
+      }
+    }
+    &.bright {
+      background-color: $gold;
+      text-shadow: -4px 0 $darkgold, 0 1px $darkgold, 1px 0 $darkgold,
+        0 -1px $darkgold;
+      &:hover {
+        background-color: darken($gold, 10%);
+        cursor: pointer;
+      }
+    }
+    &.home {
+      grid-area: option1;
+    }
+    &.about {
+      grid-area: option2;
+    }
+    &.gallery {
+      grid-area: option3;
+      background-color: $gold;
+      &:hover {
+        background-color: darken($gold, 10%);
+      }
+    }
+    &.contact {
+      grid-area: option4;
+      background-color: $black;
+      &:hover {
+        background-color: darken($black, 3%);
+      }
+    }
+    &.become {
+      padding: 3.75vh;
+      grid-area: option5;
+      background-color: $black;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 10rem;
+      text-decoration: none;
+      white-space: nowrap;
+      color: $main;
+      @media (max-width: 768px) {
+        text-shadow: none;
+        font-size: 2rem;
+      }
+    }
+    .menu-button {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $black;
+      color: $main;
+      font-size: 1rem;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $main;
+      border-radius: 0;
+      transition: background-color 0.3s ease-in-out;
+      &:hover {
+        background-color: darken($black, 5%);
+      }
+    }
+  }
+}

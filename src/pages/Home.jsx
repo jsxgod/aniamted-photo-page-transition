@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
+import { Menu } from "../components/home";
 
 const mainVariants = {
   initial: {
@@ -22,7 +23,17 @@ const mainVariants = {
   },
 };
 
-const exitVariants = {
+const opacityVariants = {
+  hide: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.6, 0.01, -0.05, 0.96],
+    },
+  },
   exit: {
     opacity: 0,
     transition: {
@@ -98,17 +109,81 @@ const imageVariants = {
   },
 };
 
+const spanVariants = {
+  hide: {
+    x: -10,
+    opacity: 0,
+  },
+  initial: {
+    background: "#bd9855",
+    x: 0,
+    y: 0,
+    opacity: 1,
+  },
+  "rotate-down": {
+    background: "#1e1f13",
+    y: 14,
+    x: -4,
+    rotate: 45,
+  },
+  "rotate-up": {
+    background: "#1e1f13",
+    y: -14,
+    x: -4,
+    rotate: -45,
+  },
+};
+
 const Home = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
   return (
     <>
-      <div className="hamburger">
-        <button className="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <Menu opened={menuOpened} />
+      <div className={`hamburger ${menuOpened ? "short" : "long"} `}>
+        <motion.button
+          className="hamburger-menu"
+          variants={mainVariants}
+          initial="initial"
+          animate="animate"
+          onClick={() => setMenuOpened(!menuOpened)}
+        >
+          <motion.span
+            variants={spanVariants}
+            initial="initial"
+            animate={menuOpened ? "rotate-down" : "initial"}
+            transition={{
+              duration: 0.5,
+              ease: [0.87, 0, 0.13, 1],
+            }}
+          ></motion.span>
+          <motion.span
+            variants={spanVariants}
+            initial="initial"
+            animate={menuOpened ? "hide" : "initial"}
+            transition={{
+              duration: 0.5,
+              ease: [0.87, 0, 0.13, 1],
+            }}
+          ></motion.span>
+          <motion.span
+            variants={spanVariants}
+            initial="initial"
+            animate={menuOpened ? "rotate-up" : "initial"}
+            transition={{
+              duration: 0.5,
+              ease: [0.87, 0, 0.13, 1],
+            }}
+          ></motion.span>
+        </motion.button>
       </div>
-      <motion.div className="home-page" variants={exitVariants} exit="exit">
+
+      <motion.div
+        className="home-page"
+        variants={opacityVariants}
+        initial="initial"
+        animate={menuOpened ? "hide" : "show"}
+        exit="exit"
+      >
         <motion.div
           className="hint"
           variants={mainVariants}

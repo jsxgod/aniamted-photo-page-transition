@@ -2,8 +2,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 50px;
-  height: 200vh;
+  width: 60px;
   z-index: 2;
   display: flex;
   justify-content: top;
@@ -23,7 +22,6 @@
       width: 80%;
       border-radius: 100vw;
       height: 5px;
-      transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
     }
   }
 }

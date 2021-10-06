@@ -6,7 +6,7 @@ const curtainVariants = {
     height: 0,
   },
   show: {
-    height: 0,
+    height: "100vh",
   },
   exit: {
     height: "100vh",

@@ -1,42 +1,43 @@
 .navbar {
-  padding: 0 32px;
+  width: 100vw;
+  padding: 0 2rem;
   position: -webkit-sticky;
-  z-index: 200;
   position: sticky;
   top: 0;
+  z-index: 200;
   background-color: $black;
-  border-bottom: 1px solid $main;
+  border-bottom: 1px solid $gold;
   margin-bottom: -1px;
   .navbar-container {
     height: $navbar-height;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%;
     .logo {
       a {
+        padding: 4px;
         text-decoration: none;
-        color: $main;
+        color: $gold;
         white-space: nowrap;
 
         &:hover {
-          background-color: $main;
+          background-color: $gold;
           color: $black;
         }
       }
     }
-    .menu {
-      height: 77px;
-      width: 77px;
+    .navbar-menu {
+      color: $gold;
+      height: 5rem;
+      width: 5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 100%;
-      border: 1px solid $main;
-
+      border: 1px solid $gold;
       &:hover {
         cursor: cell;
-        background-color: $main;
+        background-color: $gold;
         color: $black;
       }
     }

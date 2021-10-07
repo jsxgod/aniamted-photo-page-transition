@@ -78,12 +78,6 @@
     z-index: 1;
     h1 {
       text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
-      font-weight: 400;
-      font-size: 20rem;
-      font-family: "Maragsa";
-      @media (max-width: 768px) {
-        font-size: 5rem;
-      }
     }
     .welcome-message {
       width: 50%;
@@ -152,16 +146,9 @@
     }
     h1 {
       color: $main;
-      font-weight: 400;
-      font-size: 10rem;
       text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
-      font-family: "Maragsa";
-      @media (max-width: 768px) {
-        font-size: 5rem;
-      }
     }
   }
-
   .sub-section {
     display: grid;
     grid-template-areas: "title" "content";
@@ -172,6 +159,9 @@
     z-index: 1;
     border-top: 2px solid $gold;
     border-bottom: 1px solid $gold;
+    @media (max-width: 768px) {
+      border: none;
+    }
     &.left {
       border-radius: 0 100px 0 0;
       grid-area: section-left;
@@ -183,6 +173,9 @@
       border-radius: 100px 0 0 0;
       border-left: 1px solid $gold;
       grid-area: section-right;
+      @media (max-width: 768px) {
+        border: none;
+      }
     }
     .sub-title {
       height: 100%;
@@ -191,13 +184,6 @@
       align-items: center;
       h2 {
         color: $main;
-        font-weight: 200;
-        font-size: 4rem;
-        font-family: "Maragsa";
-        letter-spacing: 0.5rem;
-        @media (max-width: 768px) {
-          font-size: 2.5rem;
-        }
       }
     }
     .sub-section-content-wrapper {
@@ -223,8 +209,6 @@
           background-color: rgba($black, 0.85);
         }
         h3 {
-          font-weight: 200;
-          font-size: 3rem;
         }
         p {
         }
@@ -235,13 +219,10 @@
     }
   }
   .contact {
-    border: 1px solid $gold;
-    border-top: none;
     z-index: 1;
     background-color: $black;
     width: 100%;
     height: 100%;
-    font-size: 1rem;
     grid-area: footer;
   }
 }

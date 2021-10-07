@@ -235,6 +235,8 @@
     }
   }
   .contact {
+    border: 1px solid $gold;
+    border-top: none;
     z-index: 1;
     background-color: $black;
     width: 100%;

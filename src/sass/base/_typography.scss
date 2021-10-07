@@ -12,20 +12,113 @@
 
 html {
   font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 }
 
 h1,
 .title,
 .location,
-.menu,
+.navbar-menu,
 .instagram,
 .model-info-wrapper,
 a {
   font-family: "Helvetica Neue";
 }
 
-h2 {
-  font-size: 3rem;
+.home-page {
+  .welcome-wrapper {
+    h1 {
+      font-weight: 400;
+      font-size: 20rem;
+      font-family: "Maragsa";
+      @media (max-width: 768px) {
+        font-size: 5rem;
+      }
+    }
+  }
+  .section-title {
+    h1 {
+      font-weight: 400;
+      font-size: 10rem;
+      font-family: "Maragsa";
+      @media (max-width: 768px) {
+        font-size: 5rem;
+      }
+    }
+  }
+  .sub-section {
+    h2 {
+      font-weight: 200;
+      font-size: 4rem;
+      font-family: "Maragsa";
+      letter-spacing: 0.5rem;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+    .sub-section-content-wrapper {
+      .sub-message {
+        h3 {
+          font-weight: 200;
+          font-size: 3rem;
+        }
+        p {
+        }
+      }
+    }
+  }
+  .contact {
+    font-size: 1rem;
+  }
+}
+
+// Model
+.model-page {
+  .title-container {
+    .name-container {
+      span {
+        font-family: "Maragsa";
+        font-weight: 400;
+        font-size: 10vw;
+        @media (max-width: 768px) {
+          font-size: 12vw;
+        }
+      }
+    }
+  }
+  .model-info-container {
+    .paragraph-container {
+      .h2-wrapper {
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
+    .model-details {
+      .info-row {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.menu {
+  .option {
+    font-size: 10rem;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+    a {
+      font-size: 10rem;
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    .menu-button {
+      font-size: 1rem;
+    }
+  }
 }
 
 p {
@@ -34,11 +127,14 @@ p {
 
 a {
   font-size: 5rem;
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 }
 .img-link {
   font-size: 0px;
 }
-.menu {
+.navbar-menu {
   font-size: 1.5rem;
 }
 .information {

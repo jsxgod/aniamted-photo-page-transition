@@ -28,26 +28,32 @@ const ModelInfo = ({ model }) => {
         <div className="model-details">
           <div className="info-row">
             <div className="info-label">Name</div>
+            <span className="golden-line"></span>
             <div className="info-value">{model.name}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Surname</div>
+            <span className="golden-line"></span>
             <div className="info-value">{model.surname}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Age</div>
+            <span className="golden-line"></span>
             <div className="info-value">{model.age}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Height</div>
+            <span className="golden-line"></span>
             <div className="info-value">{model.height}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Eye Color</div>
+            <span className="golden-line"></span>
             <div className="info-value">{model.eye_color}</div>
           </div>
           <div className="info-row">
             <div className="info-label">Hair Color</div>
+            <span className="golden-line"></span>
             <div className="info-value">{model.hair_color}</div>
           </div>
         </div>

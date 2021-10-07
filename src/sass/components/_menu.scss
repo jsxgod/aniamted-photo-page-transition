@@ -12,6 +12,13 @@
   grid-template-columns: 50vw 50vw;
   grid-template-rows: 42.5vh 42.5vh 15vh;
 
+  &.visible {
+    visibility: visible;
+  }
+  &.hidden {
+    visibility: hidden;
+  }
+
   .option {
     font-size: 10rem;
     display: flex;

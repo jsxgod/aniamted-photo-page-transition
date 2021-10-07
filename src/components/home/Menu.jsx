@@ -30,7 +30,7 @@ const Menu = ({ opened }) => {
   return (
     <div className="menu-container">
       <motion.div
-        className="menu"
+        className={opened ? "menu visible" : "menu hidden"}
         variants={menuVariants}
         initial="hide"
         animate={opened ? "show" : "hide"}

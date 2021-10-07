@@ -92,7 +92,7 @@ const imageVariants = {
     y: -100,
   },
   animate: {
-    opacity: 1,
+    opacity: 0.7,
     y: 0,
     transition: {
       delay: 0.8,

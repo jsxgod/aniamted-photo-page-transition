@@ -1,0 +1,46 @@
+.hamburger-rail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  z-index: 1000;
+  display: flex;
+  justify-content: top;
+  .hamburger-button {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    span {
+      z-index: 2;
+      position: relative;
+      background-color: $gold;
+      width: 80%;
+      border-radius: 100vw;
+      height: 5px;
+    }
+  }
+}
+.hamburger-button {
+  width: 60px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  span {
+    z-index: 2;
+    position: relative;
+    background-color: $gold;
+    width: 80%;
+    border-radius: 100vw;
+    height: 5px;
+  }
+}

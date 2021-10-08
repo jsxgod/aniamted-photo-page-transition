@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-import { Menu } from "../components/home";
+import React, { useState, useEffect } from "react";
+import { HamburgerButton, HamburgerRail, Menu } from "../components/";
 
 const mainVariants = {
   initial: {
@@ -109,74 +109,21 @@ const imageVariants = {
   },
 };
 
-const spanVariants = {
-  hide: {
-    x: -10,
-    opacity: 0,
-  },
-  initial: {
-    background: "#bd9855",
-    x: 0,
-    y: 0,
-    opacity: 1,
-  },
-  "rotate-down": {
-    background: "#1e1f13",
-    y: 14,
-    x: -4,
-    rotate: 45,
-  },
-  "rotate-up": {
-    background: "#1e1f13",
-    y: -14,
-    x: -4,
-    rotate: -45,
-  },
-};
-
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [menuOpened, setMenuOpened] = useState(false);
   return (
     <>
       <Menu opened={menuOpened} />
-      <div className={`hamburger ${menuOpened ? "short" : "long"} `}>
-        <motion.button
-          className="hamburger-menu"
-          variants={mainVariants}
-          initial="initial"
-          animate="animate"
-          onClick={() => setMenuOpened(!menuOpened)}
-        >
-          <motion.span
-            variants={spanVariants}
-            initial="initial"
-            animate={menuOpened ? "rotate-down" : "initial"}
-            transition={{
-              duration: 0.5,
-              ease: [0.87, 0, 0.13, 1],
-            }}
-          ></motion.span>
-          <motion.span
-            variants={spanVariants}
-            initial="initial"
-            animate={menuOpened ? "hide" : "initial"}
-            transition={{
-              duration: 0.5,
-              ease: [0.87, 0, 0.13, 1],
-            }}
-          ></motion.span>
-          <motion.span
-            variants={spanVariants}
-            initial="initial"
-            animate={menuOpened ? "rotate-up" : "initial"}
-            transition={{
-              duration: 0.5,
-              ease: [0.87, 0, 0.13, 1],
-            }}
-          ></motion.span>
-        </motion.button>
-      </div>
-
+      <HamburgerRail>
+        <HamburgerButton
+          menuOpened={menuOpened}
+          stateChanger={setMenuOpened}
+          useMainVariants={true}
+        />
+      </HamburgerRail>
       <motion.div
         className="home-page"
         variants={opacityVariants}
@@ -202,7 +149,7 @@ const Home = () => {
         >
           <motion.h1 variants={titleVariants}>Welcome</motion.h1>
           <motion.div className="welcome-message">
-            <p tabindex="1">
+            <p tabIndex="1">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. A est
               laborum sed nam id ab qui fugit ducimus, minima consequatur quam
               porro aliquid sint error, pariatur velit magni quidem voluptates.

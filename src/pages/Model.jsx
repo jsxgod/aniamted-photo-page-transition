@@ -19,7 +19,7 @@ const loadVariants = {
   exit: {
     opacity: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
       ease: [0.43, 0.13, 0.23, 0.96],
     },
   },

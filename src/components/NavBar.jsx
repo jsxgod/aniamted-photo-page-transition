@@ -1,21 +1,36 @@
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, HamburgerButton } from "../components";
 const NavBar = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [hide, setHide] = useState(false);
   return (
-    <div className="navbar">
-      <div className="navbar-container">
-        <div className="logo">
-          <Link to="/">MODEL AGENCY</Link>
+    <>
+      <motion.div
+        className="navbar"
+        exit={hide ? { opacity: 0 } : {}}
+        transition={{
+          duration: 0.3,
+        }}
+      >
+        <Menu opened={menuOpened} />
+        <div className="navbar-container">
+          <div className="logo">
+            <Link to="/" onClick={() => setHide(true)}>
+              MODEL AGENCY
+            </Link>
+          </div>
+          <div className="navbar-menu">
+            <HamburgerButton
+              menuOpened={menuOpened}
+              stateChanger={setMenuOpened}
+              useMainVariants={false}
+            />
+          </div>
         </div>
-        <div className="navbar-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          MENU
-        </div>
-      </div>
-    </div>
+      </motion.div>
+    </>
   );
 };
 

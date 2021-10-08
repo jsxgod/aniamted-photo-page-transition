@@ -21,7 +21,7 @@ const Curtain = ({ clicked }) => {
         variants={curtainVariants}
         initial="hide"
         animate={clicked ? "show" : "hide"}
-        exit="exit"
+        exit={clicked ? "exit" : "hide"}
         transition={{
           duration: 0.6,
           ease: [0, 0.55, 0.45, 1],

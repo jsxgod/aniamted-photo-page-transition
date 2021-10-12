@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import React from "react";
 
 const wrapper_variants = {
@@ -10,7 +10,7 @@ const wrapper_variants = {
   animate: {
     y: 0,
     width: "100%",
-    height: window.innerWidth > 768 ? "104vh" : 200,
+    height: window.innerWidth > 768 ? "7aw0vh" : 200,
     overflow: "hidden",
     transition: {
       duration: 1.2,
@@ -32,7 +32,9 @@ const image_variants = {
   },
 };
 
-const ModelImage = ({ model }) => {
+const ModelImage = ({ model, showLightboxFunction }) => {
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   return (
     <motion.div
       className="big-image-wrapper"
@@ -44,10 +46,12 @@ const ModelImage = ({ model }) => {
       <motion.img
         src={process.env.PUBLIC_URL + model.image_large}
         alt={process.env.PUBLIC_URL + model.image}
+        style={{ scale: scale }}
         variants={image_variants}
         initial="initial"
         animate="animate"
         exit="exit"
+        onClick={() => showLightboxFunction(true)}
       />
     </motion.div>
   );

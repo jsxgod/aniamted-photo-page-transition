@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ModelImage, ModelTitle, ModelInfo } from "../components/model";
+import {
+  ModelImage,
+  ModelTitle,
+  ModelInfo,
+  LightBox,
+} from "../components/model";
 import modelData from "../data/modelData";
 
 const loadVariants = {
@@ -27,6 +32,7 @@ const loadVariants = {
 
 const Model = () => {
   const model = modelData[useParams().id - 1];
+  const [showLightbox, setShowLightbox] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,8 +46,14 @@ const Model = () => {
       animate="animate"
       exit="exit"
     >
+      <LightBox
+        model={model}
+        showLightbox={showLightbox}
+        showLightboxFunction={setShowLightbox}
+        variants={loadVariants}
+      />
       <ModelTitle model={model} />
-      <ModelImage model={model} />
+      <ModelImage model={model} showLightboxFunction={setShowLightbox} />
       <ModelInfo model={model} />
     </motion.div>
   );

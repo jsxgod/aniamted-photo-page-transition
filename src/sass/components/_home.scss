@@ -49,6 +49,7 @@
     justify-content: center;
     z-index: 1;
     h1 {
+      margin-bottom: 2rem;
       text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
     }
     .welcome-message {

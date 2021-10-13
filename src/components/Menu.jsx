@@ -57,36 +57,36 @@ const Menu = ({ opened, hideNavBarFunction }) => {
         animate={opened ? "show" : "hide"}
         exit="exit"
       >
-        {true && (
-          <>
-            <motion.div className="option dark home" variants={optionVariants}>
-              <Link to="/" onClick={() => hideNavBarFunction(true)}>
-                Home
-              </Link>
-            </motion.div>
-            <motion.div
-              className="option bright about"
-              variants={optionVariants}
-            >
-              <Link to="/about-us">About</Link>
-            </motion.div>
-            <motion.div
-              className="option bright gallery"
-              variants={optionVariants}
-            >
-              <Link to="/gallery">Gallery</Link>
-            </motion.div>
-            <motion.div
-              className="option dark contact"
-              variants={optionVariants}
-            >
-              <Link to="/contact">Contact</Link>
-            </motion.div>
-            <motion.div className="option become" variants={optionVariants}>
-              <button className="menu-button">Become our model</button>
-            </motion.div>
-          </>
-        )}
+        <motion.div className="option dark home" variants={optionVariants}>
+          <Link
+            to="/"
+            onClick={() => (hideNavBarFunction ? hideNavBarFunction(true) : {})}
+          >
+            Home
+          </Link>
+        </motion.div>
+        <motion.div className="option bright about" variants={optionVariants}>
+          <Link
+            to="/about-us"
+            onClick={() => (hideNavBarFunction ? hideNavBarFunction(true) : {})}
+          >
+            About
+          </Link>
+        </motion.div>
+        <motion.div className="option bright gallery" variants={optionVariants}>
+          <Link to="/gallery">Gallery</Link>
+        </motion.div>
+        <motion.div className="option dark contact" variants={optionVariants}>
+          <Link
+            to="/contact-us"
+            onClick={() => (hideNavBarFunction ? hideNavBarFunction(true) : {})}
+          >
+            Contact
+          </Link>
+        </motion.div>
+        <motion.div className="option become" variants={optionVariants}>
+          <button className="menu-button">Become our model</button>
+        </motion.div>
       </motion.div>
     </div>
   );

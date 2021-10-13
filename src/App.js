@@ -31,7 +31,7 @@ function App() {
           path="/model/:id"
           render={() => 
           <>
-            <NavBar />
+            <NavBar showBackArrow/>
             <Model />
           </>}
           />

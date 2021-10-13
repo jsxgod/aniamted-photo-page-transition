@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, HamburgerButton } from "../components";
-const NavBar = () => {
+import { Menu, HamburgerButton, SvgArrow } from "../components";
+const NavBar = ({ showBackArrow }) => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [hide, setHide] = useState(false);
   return (
@@ -22,6 +22,7 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="navbar-menu">
+            {showBackArrow && <SvgArrow />}
             <HamburgerButton
               menuOpened={menuOpened}
               stateChanger={setMenuOpened}

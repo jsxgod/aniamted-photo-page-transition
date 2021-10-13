@@ -147,7 +147,7 @@ const Home = () => {
           animate="animate"
           exit="exit"
         >
-          <motion.h1 variants={titleVariants}>Welcome</motion.h1>
+          <motion.h1 variants={titleVariants}>Model Agency</motion.h1>
           <motion.div className="welcome-message">
             <p tabIndex="1">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. A est
@@ -176,10 +176,10 @@ const Home = () => {
           />
         </div>
         <div className="section-title left">
-          <h1>Model</h1>
+          <h1></h1>
         </div>
         <div className="section-title right">
-          <h1>Agency</h1>
+          <h1></h1>
         </div>
         <div className="sub-section left">
           <div className="sub-title">
@@ -231,7 +231,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="contact"></div>
+        <div className="footer"></div>
       </motion.div>
     </>
   );

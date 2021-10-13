@@ -47,7 +47,7 @@ const optionVariants = {
   },
 };
 
-const Menu = ({ opened }) => {
+const Menu = ({ opened, hideNavBarFunction }) => {
   return (
     <div className="menu-container">
       <motion.div
@@ -60,7 +60,9 @@ const Menu = ({ opened }) => {
         {true && (
           <>
             <motion.div className="option dark home" variants={optionVariants}>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => hideNavBarFunction(true)}>
+                Home
+              </Link>
             </motion.div>
             <motion.div
               className="option bright about"

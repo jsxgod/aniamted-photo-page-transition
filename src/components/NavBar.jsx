@@ -14,7 +14,7 @@ const NavBar = ({ showBackArrow }) => {
           duration: 0.3,
         }}
       >
-        <Menu opened={menuOpened} />
+        <Menu hideNavBarFunction={setHide} opened={menuOpened} />
         <div className="navbar-container">
           <div className="logo">
             <Link to="/" onClick={() => setHide(true)}>

@@ -1,0 +1,239 @@
+.contact-page {
+  padding: 5% 10%;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas: "title title" "info form";
+  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 1.5fr 2.5fr;
+  @media (max-width: 1200px) {
+    grid-template-areas: "title title" "info info" "form form";
+  }
+  .contact-title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    p {
+    }
+  }
+  .contact-info-container {
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    border: 1px solid $gold;
+    box-shadow: 0.5rem 0.5rem 0.5rem 1px rgba(0, 0, 0, 0.6);
+    grid-area: info;
+    display: grid;
+    grid-template-areas: "title" "sub-title" "infos" "links";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 3fr 0.5fr;
+    width: 100%;
+    .contact-info-title {
+      display: flex;
+      justify-content: left;
+      align-items: flex-end;
+      font-size: 2rem;
+      grid-area: title;
+    }
+    .contact-info-subtitle {
+      display: flex;
+      justify-content: left;
+      padding-top: 0.5rem;
+      font-size: 1rem;
+      grid-area: sub-title;
+    }
+    .contact-details {
+      grid-area: infos;
+      display: flex;
+      flex-direction: column;
+      .info-row {
+        display: flex;
+        justify-content: left;
+        width: 100%;
+        height: 100%;
+        .info-icon {
+          color: $gold;
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 54px;
+        }
+        .info {
+          font-size: 1.2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .contact-links-container {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .contact-link {
+        font-size: 1.5rem;
+        color: $main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+          background-color: $gold;
+        }
+      }
+    }
+  }
+  .contact-form {
+    margin-left: 1rem;
+    background-color: darken($black, 0%);
+    border: 1px solid $gold;
+    border-radius: 2rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 1px rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    grid-area: form;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "first last"
+      "email phone"
+      "contact-preference contact-preference"
+      "message message"
+      "button button";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
+    grid-row-gap: 1rem;
+
+    @media (max-width: 1200px) {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+
+    .input-label {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &.preference {
+        font-size: 1rem;
+      }
+    }
+    .custom-input {
+      height: 100%;
+      width: 90%;
+      font-size: 1rem;
+      color: $gold;
+      &::placeholder {
+        color: gray;
+      }
+      background-color: darken($black, 0%);
+      border: none;
+      border-bottom: 1px solid gray;
+      outline: none;
+      transition: 0.2s ease-in-out;
+      &:focus {
+        border-bottom: 1px solid $gold;
+      }
+      &.message {
+        width: 100%;
+        resize: none;
+      }
+    }
+    .contact-preference {
+      display: grid;
+      gap: 1rem;
+      grid-area: contact-preference;
+      .preference-options {
+        display: flex;
+        .contact-preference-option {
+          width: 90%;
+          &.email {
+            grid-column: 1 / 2;
+          }
+          &.phone {
+            grid-column: 2 / 3;
+          }
+          .radio-label {
+            width: 90%;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            .radio-input {
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+    .form-message {
+      grid-area: message;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 9fr;
+      border-bottom: 1px solid gray;
+      .input-label {
+        grid-row: 1 / 2;
+        font-size: 1rem;
+      }
+      .message-input {
+        grid-row: 2 / 3;
+        font-size: 1rem;
+        color: $gold;
+        background-color: $black;
+        resize: none;
+        border: none;
+        transition: 0.2s ease-in-out;
+        outline: 1px solid $black;
+        padding: 0.5rem;
+        &:focus {
+          outline: 1px solid $gold;
+        }
+        &::placeholder {
+          color: gray;
+        }
+        &::-webkit-scrollbar {
+          width: 0.5rem;
+        }
+        &::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+          border-radius: 100vw;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: $gold;
+          border-radius: 100vw;
+        }
+      }
+    }
+    .form-button-wrapper {
+      display: flex;
+      justify-content: right;
+      grid-area: button;
+      grid-column: 2 / 3;
+      width: 100%;
+      .form-button {
+        font-size: 1.5rem;
+        background-color: darken($gold, 10%);
+        color: $main;
+        border-radius: 10px;
+        width: 10rem;
+        height: 100%;
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+          background-color: $gold;
+        }
+      }
+    }
+  }
+}

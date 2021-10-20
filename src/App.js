@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/main.scss";
-import { Home,  Gallery, Model } from "./pages"
+import { Home,  Gallery, Model, Contact } from "./pages"
 import { NavBar } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -35,6 +35,10 @@ function App() {
             <Model />
           </>}
           />
+          <Route
+          exact
+          path="/contact-us"
+          render={() => <Contact />}/>
         </Switch>
         </AnimatePresence>
       )}

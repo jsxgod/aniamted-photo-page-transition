@@ -1,8 +1,31 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { RiMailSendLine } from "react-icons/ri";
 import { GiRotaryPhone } from "react-icons/gi";
 import { MdLocationPin, MdEmail } from "react-icons/md";
 import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { HamburgerButton, HamburgerRail, Menu } from "../components";
+
+const mainVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 0.6,
+      ease: [0.6, 0.01, -0.05, 0.96],
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, 0.01, -0.05, 0.96],
+    },
+  },
+};
 
 const Contact = () => {
   const [firstName, setFirstName] = useState("");
@@ -11,6 +34,7 @@ const Contact = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [preference, setPreference] = useState("");
   const [message, setMessage] = useState("");
+  const [menuOpened, setMenuOpened] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,7 +50,21 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page">
+    <motion.div
+      className="contact-page"
+      variants={mainVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      <Menu opened={menuOpened} />
+      <HamburgerRail>
+        <HamburgerButton
+          menuOpened={menuOpened}
+          stateChanger={setMenuOpened}
+          useMainVariants={true}
+        />
+      </HamburgerRail>
       <div className="contact-title">
         <h2>Contact us</h2>
         <p>Have any questions? We'd love to hear from you.</p>
@@ -164,7 +202,7 @@ const Contact = () => {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

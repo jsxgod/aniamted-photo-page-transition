@@ -9,10 +9,20 @@ const Contact = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [preference, setPreference] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const formData = {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      preference,
+      message,
+    };
+    console.log(formData);
   };
 
   return (
@@ -47,21 +57,21 @@ const Contact = () => {
           </div>
         </div>
         <div className="contact-links-container">
-          <button className="contact-link">
+          <a href="https://www.facebook.com" className="contact-link">
             <FaFacebook />
-          </button>
-          <button className="contact-link">
+          </a>
+          <a href="https://www.twitter.com" className="contact-link">
             <FaTwitter />
-          </button>
-          <button className="contact-link">
+          </a>
+          <a href="https://www.instagram.com" className="contact-link">
             <FaInstagram />
-          </button>
-          <button className="contact-link">
+          </a>
+          <a href="https://www.linkedin.com" className="contact-link">
             <FaLinkedin />
-          </button>
+          </a>
         </div>
       </div>
-      <form className="contact-form" onSubmit={(event) => handleSubmit(event)}>
+      <form className="contact-form" onSubmit={handleSubmit}>
         <label className="input-label first-name">
           Name
           <input
@@ -70,6 +80,7 @@ const Contact = () => {
             value={firstName}
             placeholder={"Name"}
             onChange={(event) => setFirstName(event.target.value)}
+            required
           />
         </label>
         <label className="input-label last-name">
@@ -80,6 +91,7 @@ const Contact = () => {
             value={lastName}
             placeholder={"Last Name"}
             onChange={(event) => setLastName(event.target.value)}
+            required
           />
         </label>
         <label className="input-label email">
@@ -90,6 +102,7 @@ const Contact = () => {
             value={email}
             placeholder={"name@mail.com"}
             onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </label>
         <label className="input-label phone">
@@ -100,6 +113,7 @@ const Contact = () => {
             value={phoneNumber}
             placeholder={"+00 123 456 789"}
             onChange={(event) => setPhoneNumber(event.target.value)}
+            required
           />
         </label>
         <div className="contact-preference">
@@ -112,6 +126,8 @@ const Contact = () => {
                   name="contact-preference"
                   value="Email"
                   className="radio-input"
+                  onChange={(event) => setPreference(event.target.value)}
+                  required
                 />
                 Email
               </label>
@@ -123,6 +139,8 @@ const Contact = () => {
                   name="contact-preference"
                   value="Phone"
                   className="radio-input"
+                  onChange={(event) => setPreference(event.target.value)}
+                  required
                 />
                 Phone
               </label>
@@ -137,10 +155,11 @@ const Contact = () => {
             value={message}
             placeholder={"Write your message"}
             onChange={(event) => setMessage(event.target.value)}
+            required
           />
         </div>
         <div className="form-button-wrapper">
-          <button className="form-button">
+          <button type="submit" className="form-button">
             <RiMailSendLine />
           </button>
         </div>

@@ -3,7 +3,6 @@
   top: 0;
   right: 0;
   width: 60px;
-  z-index: 1000;
   display: flex;
   justify-content: top;
   .hamburger-button {
@@ -18,10 +17,10 @@
     span {
       z-index: 2;
       position: relative;
-      background-color: $gold;
+      background-color: $main;
       width: 80%;
       border-radius: 100vw;
-      height: 5px;
+      height: 2px;
     }
   }
 }
@@ -38,9 +37,9 @@
   span {
     z-index: 2;
     position: relative;
-    background-color: $gold;
+    background-color: $main;
     width: 80%;
     border-radius: 100vw;
-    height: 5px;
+    height: 2px;
   }
 }

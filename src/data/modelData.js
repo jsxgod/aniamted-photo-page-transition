@@ -1,8 +1,8 @@
 const modelData = [
   {
     id: 1,
-    name: "Yasmeen",
-    surname: "Tariq",
+    name: "Name",
+    surname: "Surname",
     age: 22,
     height: 185,
     eye_color: "brown",
@@ -11,7 +11,7 @@ const modelData = [
     latitude: "-81.379234",
     image: `/images/models/model-1-small.jpg`,
     image_large: `/images/models/model-1-large.webp`,
-    instagram: `@instagram_placeholder`
+    instagram: `@instagram_placeholder`,
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const modelData = [
     latitude: "-81.379234",
     image: `/images/models/model-2-small.jpg`,
     image_large: `/images/models/model-2-large.jpg`,
-    instagram: `@instagram_placeholder`
+    instagram: `@instagram_placeholder`,
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const modelData = [
     latitude: "-81.379234",
     image: `/images/models/model-3-large.jpg`,
     image_large: `/images/models/model-3-large.jpg`,
-    instagram: `@instagram_placeholder`
+    instagram: `@instagram_placeholder`,
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const modelData = [
     latitude: "-81.379234",
     image: `/images/models/model-4-large.jpg`,
     image_large: `/images/models/model-4-large.jpg`,
-    instagram: `@instagram_placeholder`
+    instagram: `@instagram_placeholder`,
   },
   {
     id: 5,
@@ -67,7 +67,7 @@ const modelData = [
     latitude: "-81.379234",
     image: `/images/models/model-5-small.jpg`,
     image_large: `/images/models/model-5-large.jpg`,
-    instagram: `@instagram_placeholder`
+    instagram: `@instagram_placeholder`,
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ const modelData = [
     latitude: "-81.379234",
     image: `/images/models/model-6-small.jpg`,
     image_large: `/images/models/model-6-large.jpg`,
-    instagram: `@instagram_placeholder`
+    instagram: `@instagram_placeholder`,
   },
   {
     id: 7,
@@ -95,8 +95,8 @@ const modelData = [
     latitude: "-81.379234",
     image: `/images/models/model-7-small.jpg`,
     image_large: `/images/models/model-7-large.jpg`,
-    instagram: `@instagram_placeholder`
+    instagram: `@instagram_placeholder`,
   },
-]
+];
 
 export default modelData;

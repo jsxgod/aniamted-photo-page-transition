@@ -1,202 +1,85 @@
 .home-page {
-  position: relative;
-  overflow: hidden;
-  background: $black;
-  color: $main;
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  justify-content: center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100vh 12rem 12rem 15vh 60vh 2rem;
-  grid-template-areas:
-    "welcome-left welcome-right"
-    "sub-title-left ."
-    ". sub-title-right"
-    "gap gap"
-    "section-left section-right"
-    "footer footer";
-  @media (max-width: 768px) {
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 100vh auto auto 150px auto auto 2rem;
-    grid-template-areas:
-      "welcome-left welcome-right"
-      "sub-title-left sub-title-left"
-      "sub-title-right sub-title-right"
-      "gap gap"
-      "section-left section-left"
-      "section-right section-right"
-      "footer footer";
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "title-left title-left" "title-right title-right";
+  overflow: hidden;
+  padding: 0 5rem;
+  .title-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    &.left {
+      justify-content: flex-start;
+      grid-area: title-left;
+    }
+    &.right {
+      justify-content: flex-end;
+      grid-area: title-right;
+    }
+    h1 {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
+      font-size: 20rem;
+    }
   }
-  .hint {
+  .image-wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: left;
-    width: 100%;
-    height: 5vh;
-    padding: 0.5rem;
-  }
-  .welcome-wrapper {
-    width: 100%;
-    position: relative;
-    padding: 2rem;
-    grid-area: welcome-left;
-    grid-column: welcome-left / welcome-right;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    h1 {
-      margin-bottom: 2rem;
-      text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
-    }
-    .welcome-message {
-      width: 50%;
-      border: 2px solid $gold;
-      border-radius: 16px;
-      background: rgba($black, 0.6);
-      padding: 8px;
-      transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
-      &:hover {
-        background-color: rgba($black, 0.85);
-      }
-      p {
-        @media (max-width: 768px) {
-          transition: 0.5s ease-in-out;
-          &:focus {
-            background-color: $black;
-          }
-        }
-        text-align: justify;
-        line-height: 1.5;
-        font-weight: 400;
-      }
-      @media (max-width: 768px) {
-        width: 100%;
-      }
-    }
-  }
-  .img-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: bottom;
-    grid-area: welcome-right;
-    img {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      z-index: 0;
-      @media (max-width: 768px) {
-        width: 250%;
-      }
-    }
-    @media (max-width: 768px) {
-      grid-column: 2 / 3;
-    }
-  }
-  .section-title {
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    &.left {
-      justify-content: right;
-      grid-area: sub-title-left;
-      @media (max-width: 768px) {
-        padding-left: 13%;
-        justify-content: left;
-      }
-    }
-    &.right {
-      justify-content: left;
-      grid-area: sub-title-right;
-      @media (max-width: 768px) {
-        padding-right: 13%;
-        justify-content: right;
-      }
-    }
-    h1 {
-      color: $main;
-      text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
-    }
-  }
-  .sub-section {
-    display: grid;
-    grid-template-areas: "title" "content";
-    grid-template-rows: 1fr 3fr;
-    background: rgba($black, 0.6);
-    width: 100%;
-    align-items: center;
-    z-index: 1;
-    border-top: 2px solid $gold;
-    border-bottom: 1px solid $gold;
-    @media (max-width: 768px) {
-      border: none;
-    }
-    &.left {
-      border-radius: 0 100px 0 0;
-      grid-area: section-left;
-      @media (max-width: 768px) {
-        border-bottom: none;
-      }
-    }
-    &.right {
-      border-radius: 100px 0 0 0;
-      border-left: 1px solid $gold;
-      grid-area: section-right;
-      @media (max-width: 768px) {
-        border: none;
-        border-radius: 0;
-      }
-    }
-    .sub-title {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      h2 {
-        color: $main;
-      }
-    }
-    .sub-section-content-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: top;
-      align-items: center;
-      width: 100%;
-      .sub-message {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        padding: 1rem;
-        border: 1px solid $gold;
-        border-radius: 1rem;
-        width: 75%;
-        text-align: justify;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
-        &:hover {
-          background-color: rgba($black, 0.85);
-        }
-        h3 {
-        }
-        p {
-        }
-      }
-    }
-    @media (max-width: 768px) {
-      grid-template-rows: 1fr 6fr;
-    }
-  }
-  .footer {
-    z-index: 1;
-    background-color: $black;
     width: 100%;
     height: 100%;
-    grid-area: footer;
+    overflow: hidden;
+    z-index: -1;
+    img {
+      display: block;
+      position: absolute;
+      top: 20%;
+      right: 0;
+      height: 100%;
+    }
+  }
+  .locations-wrapper {
+    overflow: hidden;
+    width: 30%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-55%);
+    display: flex;
+    justify-content: space-between;
+    span {
+      font-family: "Helvetica Neue";
+      font-size: 2rem;
+      color: $gold;
+    }
+  }
+  .dots-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .dot-outline {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: $gold;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }

@@ -1,27 +1,8 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { HamburgerButton, HamburgerRail, Menu } from "../components/";
-
-const mainVariants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      delay: 1.5,
-      duration: 0.6,
-      ease: [0.6, 0.01, -0.05, 0.96],
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, 0.01, -0.05, 0.96],
-    },
-  },
-};
+import { MdRadioButtonUnchecked, MdRadioButtonChecked } from "react-icons/md";
+import { useInterval } from "../hooks/useInterval";
 
 const opacityVariants = {
   hide: {
@@ -43,37 +24,34 @@ const opacityVariants = {
   },
 };
 
-const welcomeVariants = {
+const bringDown = {
   initial: {
-    opacity: 0,
+    y: "-100%",
   },
   animate: {
-    opacity: 1,
+    y: 0,
     transition: {
-      delay: 1.5,
-      duration: 1,
-      staggerChildren: 0.04,
+      duration: 2,
       ease: [0.6, 0.01, -0.05, 0.96],
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.4,
       ease: [0.6, 0.01, -0.05, 0.96],
     },
   },
 };
 
-const titleVariants = {
+const bringUp = {
   initial: {
-    y: 100,
+    y: "100%",
   },
   animate: {
     y: 0,
     transition: {
-      duration: 0.6,
-      delay: 1.5,
+      duration: 2,
       ease: [0.6, 0.01, -0.05, 0.96],
     },
   },
@@ -88,16 +66,18 @@ const titleVariants = {
 
 const imageVariants = {
   initial: {
-    opacity: 0,
+    scale: 3,
+    opacity: 0.001,
     y: -100,
   },
   animate: {
-    opacity: 0.7,
+    scale: 3,
+    opacity: 0.5,
     y: 0,
     transition: {
-      delay: 0.8,
-      duration: 0.8,
-      ease: [0.6, 0.01, -0.05, 0.96],
+      duration: 2,
+      delay: 0.5,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
   exit: {
@@ -109,11 +89,42 @@ const imageVariants = {
   },
 };
 
+const locationVariants = {
+  initial: {
+    y: "100%",
+  },
+  animate: {
+    y: 0,
+    transition: {
+      duration: 2,
+      ease: [0.6, 0.01, -0.05, 0.96],
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.6, 0.01, -0.05, 0.96],
+    },
+  },
+};
+
 const Home = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [menuOpened, setMenuOpened] = useState(false);
+
+  useInterval(() => {
+    if (photoIndex === 2) {
+      setPhotoIndex(0);
+    } else {
+      setPhotoIndex((photoIndex) => photoIndex + 1);
+    }
+  }, 5000);
+
   return (
     <>
       <Menu opened={menuOpened} />
@@ -131,107 +142,95 @@ const Home = () => {
         animate={menuOpened ? "hide" : "show"}
         exit="exit"
       >
-        <motion.div
-          className="hint"
-          variants={mainVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        >
-          {window.innerWidth < 992 ? "Tap" : "Hover"} on text to read
-        </motion.div>
-        <motion.div
-          className="welcome-wrapper"
-          variants={welcomeVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        >
-          <motion.h1 variants={titleVariants}>Model Agency</motion.h1>
-          <motion.div className="welcome-message">
-            <p tabIndex="1">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. A est
-              laborum sed nam id ab qui fugit ducimus, minima consequatur quam
-              porro aliquid sint error, pariatur velit magni quidem voluptates.
-              Ullam explicabo eius, enim est delectus nisi laboriosam ex
-              pariatur perferendis assumenda aliquid provident voluptatibus
-              cupiditate architecto commodi natus. Aliquam neque animi voluptate
-              officia impedit eligendi cum dolorum minus, deleniti ipsam nostrum
-              nemo illo, magnam hic dicta architecto quis distinctio!
-              Consequatur possimus odio ullam voluptas accusamus! Culpa iste
-              illo quidem nulla impedit, fugit, enim eius asperiores consequatur
-              dolor quas reprehenderit dolorem inventore incidunt perferendis
-              aliquid, nemo tempore commodi unde! Magnam.
-            </p>
-          </motion.div>
-        </motion.div>
-        <div className="img-wrapper">
-          <motion.img
-            variants={imageVariants}
+        <motion.div className={"title-wrapper left"}>
+          <motion.h1
             initial="initial"
             animate="animate"
             exit="exit"
-            src={process.env.PUBLIC_URL + `/images/model-home-1.png`}
-            alt={"transparent.png"}
-          />
+            variants={bringDown}
+          >
+            Model
+          </motion.h1>
+        </motion.div>
+        <div className={"title-wrapper right"}>
+          <motion.h1
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={bringUp}
+          >
+            Agency
+          </motion.h1>
         </div>
-        <div className="section-title left">
-          <h1></h1>
+        <div className="image-wrapper">
+          <AnimatePresence>
+            {photoIndex === 0 && (
+              <motion.img
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                src={process.env.PUBLIC_URL + `/images/model-home-0.png`}
+                alt={"transparent.png"}
+              />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {photoIndex === 1 && (
+              <motion.img
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                src={process.env.PUBLIC_URL + `/images/model-home-1.png`}
+                alt={"transparent.png"}
+              />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {photoIndex === 2 && (
+              <motion.img
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                src={process.env.PUBLIC_URL + `/images/model-home-2.png`}
+                alt={"transparent.png"}
+              />
+            )}
+          </AnimatePresence>
         </div>
-        <div className="section-title right">
-          <h1></h1>
-        </div>
-        <div className="sub-section left">
-          <div className="sub-title">
-            <h2>Inspiration</h2>
-          </div>
-          <div className="sub-section-content-wrapper">
-            <div className="sub-message">
-              <h3>Lorem?</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. At ut
-                nemo dolor recusandae expedita natus in cumque iure ipsa vero
-                earum, dicta mollitia placeat ratione quasi molestiae quos
-                officiis minima debitis amet excepturi sequi iusto voluptatem?
-                Amet accusamus aliquam distinctio omnis at blanditiis a odio
-                iure. Id necessitatibus rem deserunt?
-              </p>
-            </div>
-            <div className="sub-message">
-              <h3>Ipsum?</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. At ut
-                nemo dolor recusandae expedita natus in cumque iure ipsa vero
-                earum, dicta mollitia placeat ratione quasi molestiae quos
-                officiis minima debitis amet excepturi sequi iusto voluptatem?
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="sub-section right">
-          <div className="sub-title">
-            <h2>About</h2>
-          </div>
-          <div className="sub-section-content-wrapper">
-            <div className="sub-message">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                non cumque accusamus ea exercitationem assumenda nihil veniam
-                doloribus quia eius, molestiae nobis blanditiis commodi officia
-                amet. Vitae eaque sit, magnam itaque voluptates, repudiandae
-                facilis molestiae atque quis et, consequatur tenetur! Tempora
-                cupiditate at ut dolor pariatur iusto a mollitia obcaecati quo
-                laboriosam ipsa voluptate repellat minima fugiat possimus quidem
-                corrupti optio suscipit delectus, accusamus, eligendi porro
-                ipsum repudiandae! Minus, nostrum? Pariatur quod vitae
-                repudiandae. Labore, unde ducimus accusamus distinctio sint
-                perferendis porro soluta molestias obcaecati quam dicta odit
-                nulla.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="footer"></div>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ delayChildren: 1, staggerChildren: 0.3 }}
+          className="locations-wrapper"
+        >
+          <motion.span variants={locationVariants}>Berlin</motion.span>
+          <motion.span variants={locationVariants}>Paris</motion.span>
+          <motion.span variants={locationVariants}>Rome</motion.span>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.6, delay: 0.5 } }}
+          className="dots-wrapper"
+        >
+          {[0, 1, 2].map((idx) =>
+            idx === photoIndex ? (
+              <MdRadioButtonChecked
+                key={`dot-checked-${idx}`}
+                className={`dot-outline ${idx === photoIndex ? "active" : ""}`}
+              />
+            ) : (
+              <MdRadioButtonUnchecked
+                key={`dot-outline-${idx}`}
+                className={`dot-outline ${idx === photoIndex ? "active" : ""}`}
+                onClick={() => setPhotoIndex(idx)}
+              />
+            )
+          )}
+        </motion.div>
       </motion.div>
     </>
   );

@@ -71,9 +71,6 @@ const Contact = () => {
       </div>
       <div className="contact-info-container">
         <div className="contact-info-title">Contact Information</div>
-        <div className="contact-info-subtitle">
-          Fill up the form and our Team will get back to You within 24 hours.
-        </div>
         <div className="contact-details">
           <div className="info-row">
             <div className="info-icon">

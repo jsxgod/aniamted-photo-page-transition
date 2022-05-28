@@ -44,21 +44,21 @@ const spanVariants = {
     opacity: 0,
   },
   initial: {
-    background: "#bd9855",
+    background: "#f0d8bb",
     x: 0,
     y: 0,
     opacity: 1,
   },
   "rotate-down": {
     background: "#1e1f13",
-    y: 14,
-    x: -4,
+    y: 12,
+    x: -3,
     rotate: 45,
   },
   "rotate-up": {
     background: "#1e1f13",
     y: -14,
-    x: -4,
+    x: -3,
     rotate: -45,
   },
 };

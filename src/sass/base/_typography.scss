@@ -28,49 +28,13 @@ a {
 }
 
 .home-page {
-  .welcome-wrapper {
-    h1 {
-      font-weight: 400;
-      font-size: 15rem;
-      font-family: "Maragsa";
-      @media (max-width: 768px) {
-        font-size: 4.8rem;
-      }
+  h1 {
+    font-weight: 400;
+    font-size: 15rem;
+    font-family: "Maragsa";
+    @media (max-width: 768px) {
+      font-size: 4.8rem;
     }
-  }
-  .section-title {
-    h1 {
-      font-weight: 400;
-      font-size: 10rem;
-      font-family: "Maragsa";
-      @media (max-width: 768px) {
-        font-size: 5rem;
-      }
-    }
-  }
-  .sub-section {
-    h2 {
-      font-weight: 200;
-      font-size: 4rem;
-      font-family: "Maragsa";
-      letter-spacing: 0.5rem;
-      @media (max-width: 768px) {
-        font-size: 2.5rem;
-      }
-    }
-    .sub-section-content-wrapper {
-      .sub-message {
-        h3 {
-          font-weight: 200;
-          font-size: 3rem;
-        }
-        p {
-        }
-      }
-    }
-  }
-  .footer {
-    font-size: 1rem;
   }
 }
 

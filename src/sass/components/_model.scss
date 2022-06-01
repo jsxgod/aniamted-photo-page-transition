@@ -53,14 +53,14 @@
     width: 100vw;
     height: calc(50vh - #{$navbar-height});
     display: grid;
-    grid-template-areas: "empty instagram empty2" "empty3 title empty4";
+    grid-template-areas: ". instagram ." ". title .";
     grid-template-rows: 0.5fr 1fr;
     grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(0, 1fr);
     align-items: top;
     justify-content: space-evenly;
-    @media (max-width: 768px) {
+    @media (max-width: $desktop) {
       padding: 0 1rem;
-      grid-template-areas: "empty instagram empty2" "title title title";
+      grid-template-areas: ". instagram ." "title title title";
       height: calc(30vh - #{$navbar-height});
     }
     .title-info-container {
@@ -75,7 +75,7 @@
         }
       }
       .instagram {
-        @media (max-width: 768px) {
+        @media (max-width: $desktop) {
           display: none;
         }
       }
@@ -108,6 +108,13 @@
     }
     img {
       position: absolute;
+      top: -15vw;
+      @media (max-width: $tablet) {
+        top: -100%;
+      }
+      @media (max-width: $phone) {
+        top: 0;
+      }
       width: 100%;
     }
   }
@@ -163,7 +170,7 @@
           padding: 0 10px;
           .info-label {
             display: flex;
-            justify-content: left;
+            justify-content: flex-start;
             grid-column: 1;
           }
           .golden-line {
@@ -174,7 +181,7 @@
           .info-value {
             grid-column: 3;
             display: flex;
-            justify-content: right;
+            justify-content: flex-end;
           }
         }
       }

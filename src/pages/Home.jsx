@@ -26,7 +26,7 @@ const opacityVariants = {
 
 const bringDown = {
   initial: {
-    y: "-100%",
+    y: "-150%",
   },
   animate: {
     y: 0,
@@ -46,7 +46,7 @@ const bringDown = {
 
 const bringUp = {
   initial: {
-    y: "100%",
+    y: "150%",
   },
   animate: {
     y: 0,

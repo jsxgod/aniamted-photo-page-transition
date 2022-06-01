@@ -5,6 +5,11 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "title-left title-left" "title-right title-right";
+
+  @media (max-width: $phone) {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "title-left title-left" "title-right title-right" ". ." ". .";
+  }
   overflow: hidden;
   padding: 0 5rem;
   .title-wrapper {
@@ -15,8 +20,18 @@
     &.left {
       justify-content: flex-start;
       grid-area: title-left;
+      @media (max-width: $phone) {
+        h1 {
+          align-items: flex-end;
+        }
+      }
     }
     &.right {
+      @media (max-width: $phone) {
+        h1 {
+          align-items: flex-start;
+        }
+      }
       justify-content: flex-end;
       grid-area: title-right;
     }
@@ -25,7 +40,7 @@
       display: flex;
       align-items: center;
       text-shadow: -4px 0 $gold, 0 1px $gold, 1px 0 $gold, 0 -1px $gold;
-      font-size: 20rem;
+      font-size: 20vw;
     }
   }
   .image-wrapper {
@@ -46,15 +61,20 @@
   }
   .locations-wrapper {
     overflow: hidden;
-    width: 30%;
     height: fit-content;
     position: absolute;
     top: 50%;
     left: 5rem;
     transform: translateY(-55%);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    @media (max-width: $tablet) {
+      span {
+        font-size: 1.5rem;
+      }
+    }
     span {
+      margin-right: 1rem;
       font-family: "Helvetica Neue";
       font-size: 2rem;
       color: $gold;

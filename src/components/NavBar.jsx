@@ -18,7 +18,7 @@ const NavBar = ({ showBackArrow }) => {
         <div className="navbar-container">
           <div className="logo">
             <Link to="/" onClick={() => setHide(true)}>
-              MODEL AGENCY
+              {window.innerWidth <= 576 ? "MA" : "MODEL AGENCY"}
             </Link>
           </div>
           <div className="navbar-menu">

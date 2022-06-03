@@ -1,19 +1,15 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Curtain } from "../components";
 import modelData from "../data/modelData";
 
 const Gallery = () => {
-  const [modelClicked, setModelClicked] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <Curtain clicked={modelClicked} />
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -28,11 +24,7 @@ const Gallery = () => {
             {modelData.map((model, i) => (
               <div key={i} className="image-container">
                 <div className="thumbnail">
-                  <Link
-                    to={`/model/${model.id}`}
-                    onClick={() => setModelClicked(true)}
-                    className="img-link"
-                  >
+                  <Link to={`/model/${model.id}`} className="img-link">
                     <img
                       src={process.env.PUBLIC_URL + model.image}
                       alt="model1.jpg"

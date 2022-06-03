@@ -23,7 +23,14 @@ const wrapper_variants = {
 const image_variants = {
   initial: {},
   animate: {
-    y: window.innerWidth > 1440 ? "-30%" : -150,
+    y:
+      window.innerWidth > 1440
+        ? "-30%"
+        : window.innerWidth <= 576
+        ? "-25%"
+        : window.innerWidth <= 768
+        ? "-35%"
+        : "-15vw",
     transition: {
       duration: 1,
       delay: 1.1,

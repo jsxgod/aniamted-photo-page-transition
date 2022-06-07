@@ -1,8 +1,9 @@
 
 # Model Agency
 
-A mock up website of a model agency studio. 
-This is one of my older projects. The goal of the project was to practice animations and design.
+A mock up website of a model agency studio.</br> 
+This is one of my older projects.</br>
+The goal of the project was to practice animations and design.
 
 ## Website
 The project is available [here 🌐](https://modelagency-ksdev.netlify.app/).

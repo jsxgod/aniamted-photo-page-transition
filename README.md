@@ -1,5 +1,5 @@
 
-# Model Agency.
+# Model Agency
 
 A mock up website of a model agency studio.</br> 
 This is one of my older projects.</br>

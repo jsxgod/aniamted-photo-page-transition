@@ -3,7 +3,8 @@
 
 A mock up website of a model agency studio.</br> 
 This is one of my older projects.</br>
-The goal of the project was to practice animations and design.
+The goal of the project was to practice animations and design.</br>
+TODO: about page, become our model form
 
 ## Website
 The project is available [here 🌐](https://modelagency-ksdev.netlify.app/).
